@@ -29,8 +29,8 @@ jobs:
           push: true
           # Lowercase your username and repo name here
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/your_repo_name:latest
-            ${{ secrets.DOCKER_USERNAME }}/your_repo_name:${{ github.ref_name }}
+            ${{ secrets.DOCKER_USERNAME }}/ci-cd-demo:latest
+            ${{ secrets.DOCKER_USERNAME }}/ci-cd-demo:${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /path/to/your/compose-file-directory
+            cd /usr/src/app
 
             # Pull the fresh image from Docker Hub down to EC2
             docker compose pull
