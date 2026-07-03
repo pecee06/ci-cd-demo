@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /usr/src/app
+            cd /home/ubuntu/ci-cd-demo
 
             # Pull the fresh image from Docker Hub down to EC2
             docker compose pull
