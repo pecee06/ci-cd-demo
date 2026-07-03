@@ -14,13 +14,14 @@ class ScientificCalculator extends Calculator {
 
 	tan(a) {
 		let val = Math.tan(a);
-		if (val > this.INT_MAX) throw new NanException();
+		if (val > this.INT_MAX)
+			throw new NanException("Input can't be a multiple of pi/2");
 		return val;
 	}
 
 	ln(a) {
 		let val = Math.log(a);
-		if (val == -Infinity) throw new NanException();
+		if (val == -Infinity) throw new NanException("Input can't be 0");
 		return val;
 	}
 }

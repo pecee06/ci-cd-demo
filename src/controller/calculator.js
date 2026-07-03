@@ -14,7 +14,7 @@ class Calculator {
 	}
 
 	divide(a, b) {
-		if (b == 0) throw new NanException();
+		if (b == 0) throw new NanException("Division by 0");
 		return a / b;
 	}
 }
