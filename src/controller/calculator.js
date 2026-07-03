@@ -1,3 +1,5 @@
+const NanException = require("../utils/nanException.js");
+
 class Calculator {
 	add(a, b) {
 		return a + b;
@@ -12,11 +14,8 @@ class Calculator {
 	}
 
 	divide(a, b) {
-		try {
-			return a / b;
-		} catch (error) {
-			throw new Error(error.message);
-		}
+		if (b == 0) throw new NanException();
+		return a / b;
 	}
 }
 
