@@ -17,5 +17,9 @@
 	"bugs": {
 		"url": "https://github.com/pecee06/ci-cd-demo/issues"
 	},
-	"homepage": "https://github.com/pecee06/ci-cd-demo#readme"
+	"homepage": "https://github.com/pecee06/ci-cd-demo#readme",
+	"dependencies": {
+		"dotenv": "^17.4.2",
+		"express": "^5.2.1"
+	}
 }
