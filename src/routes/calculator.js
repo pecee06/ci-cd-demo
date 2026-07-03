@@ -29,8 +29,7 @@ router.post("/div", (req, res) => {
 	try {
 		res.send(calc.divide(Number(a), Number(b))).status(200);
 	} catch (error) {
-		console.error(error.message);
-		res.status(400);
+		res.send(error.message).status(400);
 	}
 });
 
@@ -52,8 +51,7 @@ router.post("/tan", (req, res) => {
 	try {
 		res.send(calc.tan(Number(a))).status(200);
 	} catch (error) {
-		console.error(error.message);
-		res.status(400);
+		res.send(error.message).status(400);
 	}
 });
 
@@ -63,8 +61,7 @@ router.post("/lon", (req, res) => {
 	try {
 		res.send(calc.ln(Number(a))).status(200);
 	} catch (error) {
-		console.error(error.message);
-		res.status(400);
+		res.send(error.message).status(400);
 	}
 });
 
