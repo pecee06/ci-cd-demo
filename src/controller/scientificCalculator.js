@@ -13,23 +13,15 @@ class ScientificCalculator extends Calculator {
 	}
 
 	tan(a) {
-		try {
-			let val = Math.tan(a);
-			if (val > this.INT_MAX) throw new NanException();
-			return val;
-		} catch (error) {
-			throw new Error(error.message);
-		}
+		let val = Math.tan(a);
+		if (val > this.INT_MAX) throw new NanException();
+		return val;
 	}
 
 	ln(a) {
-		try {
-			let val = Math.log(a);
-			if (val == -Infinity) throw new NanException();
-			return val;
-		} catch (error) {
-			throw new Error(error.message);
-		}
+		let val = Math.log(a);
+		if (val == -Infinity) throw new NanException();
+		return val;
 	}
 }
 
