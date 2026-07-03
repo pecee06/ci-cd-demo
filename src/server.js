@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 
+const calcRouter = require("./routes/calculator.js");
+
 const app = express();
 
 // middlewares
@@ -12,9 +14,7 @@ app.use(
 	})
 );
 
-app.get("/api", (req, res) => {
-	res.send("OK").status(200);
-});
+app.use("/api", calcRouter);
 
 app.listen(process.env.PORT, () => {
 	console.log(`Server listening at http://localhost:${process.env.PORT}`);
