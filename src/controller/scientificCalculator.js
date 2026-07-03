@@ -1,4 +1,5 @@
 const Calculator = require("./calculator.js");
+const NanException = require("../utils/nanException.js");
 
 class ScientificCalculator extends Calculator {
 	INT_MAX = ~(1 << 31);
@@ -14,7 +15,8 @@ class ScientificCalculator extends Calculator {
 	tan(a) {
 		try {
 			let val = Math.tan(a);
-			// TODO: Do error handling and return a value
+			if (val > this.INT_MAX) throw new NanException();
+			return val;
 		} catch (error) {
 			throw new Error(error.message);
 		}
@@ -23,7 +25,8 @@ class ScientificCalculator extends Calculator {
 	ln(a) {
 		try {
 			let val = Math.log(a);
-			// TODO: Do error handling and return a value
+			if (val == -Infinity) throw new NanException();
+			return val;
 		} catch (error) {
 			throw new Error(error.message);
 		}
