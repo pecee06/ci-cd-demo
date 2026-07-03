@@ -1,6 +1,6 @@
 class NanException extends Error {
-	constructor() {
-		super("Not A Number");
+	constructor(msg) {
+		super(`ERROR: Not A Number - ${msg}`);
 	}
 }
 
