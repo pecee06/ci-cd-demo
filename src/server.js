@@ -12,6 +12,10 @@ app.use(
 	})
 );
 
+app.get("/api", (req, res) => {
+	res.send("OK").status(200);
+});
+
 app.listen(process.env.PORT, () => {
 	console.log(`Server listening at http://localhost:${process.env.PORT}`);
 });
